@@ -13,12 +13,17 @@ function rollMany(rolls, pins) {
 
 test("gutter game", () => {
     rollMany(20, 0);
-
     expect(game.score()).toBe(0);
 })
 
 test("all ones", () => {
     rollMany(20, 1);
-
     expect(game.score()).toBe(20);    
+})
+
+test("one spare", () => {
+    game.roll(5);
+    game.roll(5); // spare
+    game.roll(3);
+    expect(game.score()).toBe(16);    
 })
