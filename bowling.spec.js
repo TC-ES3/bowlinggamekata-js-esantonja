@@ -1,19 +1,24 @@
 import Game from "./bowling"
 
-test("gutter game", () => {
-    const game = new Game();
-    for(let i = 0; i < 20; i += 1) {
-        game.roll(0);
+let game;
+beforeEach(() => {
+    game = new Game();
+});
+
+function rollMany(rolls, pins) {
+    for (let i = 0; i < rolls; i += 1) {
+        game.roll(pins);
     }
+}
+
+test("gutter game", () => {
+    rollMany(20, 0);
 
     expect(game.score()).toBe(0);
 })
 
 test("all ones", () => {
-    const game = new Game();
-    for(let i = 0; i < 20; i += 1) {
-        game.roll(1);
-    }
+    rollMany(20, 1);
 
     expect(game.score()).toBe(20);    
 })
