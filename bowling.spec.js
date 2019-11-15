@@ -27,14 +27,14 @@ test("all ones", () => {
 });
 
 test("one spare", () => {
-  rollSpare(); // spare
+  rollSpare(); 
   game.roll(3);
   rollMany(17, 0);
   expect(game.score()).toBe(16);
 });
 
 test("one strike", () => {
-    game.roll(10);
+    game.roll(10); // strike
     game.roll(3);
     game.roll(4);
     rollMany(18, 0);
