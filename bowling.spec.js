@@ -1,4 +1,5 @@
-// bowling.spec.js
+import Game from "./bowling"
+
 test("gutter game", () => {
-    const game = new Gamepad();
+    const game = new Game();
 })
