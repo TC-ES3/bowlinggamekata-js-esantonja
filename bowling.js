@@ -9,6 +9,7 @@ export default class Game {
         const rolls = this._rolls;
         let score = 0;
         let frameIndex = 0;
+        
         for(let frame = 0; frame < 10; frame+=1) {
             if(isStrike(rolls, frameIndex)) {
                 score += 10 + strikeBonus(rolls, frameIndex);
@@ -17,7 +18,7 @@ export default class Game {
             {
                 score += 10 + spareBonus(rolls, frameIndex);
                 frameIndex += 2;
-            } else {                 
+            } else {
                 score += sumOfBallsInTheFrame(rolls, frameIndex);
                 frameIndex += 2;
             }
