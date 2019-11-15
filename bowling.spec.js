@@ -43,4 +43,9 @@ test("one strike", () => {
     game.roll(4);
     rollMany(18, 0);
     expect(game.score()).toBe(24);
-  });  
+  });
+
+  test("perfect game", () => {
+      rollMany(12,10);
+      expect(game.score()).toBe(300);
+  })
