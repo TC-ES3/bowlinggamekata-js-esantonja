@@ -11,7 +11,6 @@ export default class Game {
         let frameIndex = 0;
         for(let frame = 0; frame < 10; frame+=1) {
             if(isStrike(rolls, frameIndex)) {
-                // strike                
                 score += 10 + strikeBonus(rolls, frameIndex);
                 frameIndex += 1;
             } else if(isSpare(rolls, frameIndex))

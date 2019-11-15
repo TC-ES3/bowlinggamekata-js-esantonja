@@ -16,6 +16,10 @@ function rollSpare() {
     game.roll(5);
 }
 
+function rollStrike() {
+    game.roll(10);
+}
+
 test("gutter game", () => {
   rollMany(20, 0);
   expect(game.score()).toBe(0);
@@ -34,10 +38,9 @@ test("one spare", () => {
 });
 
 test("one strike", () => {
-    game.roll(10); // strike
+    rollStrike(); 
     game.roll(3);
     game.roll(4);
     rollMany(18, 0);
     expect(game.score()).toBe(24);
-  });
-  
+  });  
