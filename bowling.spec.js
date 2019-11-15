@@ -21,9 +21,10 @@ test("all ones", () => {
   expect(game.score()).toBe(20);
 });
 
-// test("one spare", () => {
-//   game.roll(5);
-//   game.roll(5); // spare
-//   game.roll(3);
-//   expect(game.score()).toBe(16);
-// });
+test("one spare", () => {
+  game.roll(5);
+  game.roll(5); // spare
+  game.roll(3);
+  rollMany(17, 0);
+  expect(game.score()).toBe(16);
+});
